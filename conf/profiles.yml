@@ -1,0 +1,16 @@
+config:
+  send_anonymous_usage_stats: false
+  use_colors: true
+
+tutorial:
+  outputs:
+    dev:
+      type: postgres
+      threads: 10
+      host: dev
+      port: 5432
+      user: postgres
+      pass: password
+      dbname: postgres
+      schema: public
+  target: dev

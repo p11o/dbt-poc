@@ -1,0 +1,12 @@
+services:
+  cli:
+    build: .
+    user: user
+    command: sleep infinity
+    volumes:
+    - ./tutorial:/home/user/tutorial
+    - ./conf/profiles.yml:/home/user/.dbt/profiles.yml
+  dev:
+    image: postgres:14.2
+    environment:
+      POSTGRES_PASSWORD: password
