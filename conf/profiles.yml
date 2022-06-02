@@ -5,12 +5,15 @@ config:
 tutorial:
   outputs:
     dev:
-      type: postgres
-      threads: 10
-      host: dev
-      port: 5432
-      user: postgres
-      pass: password
-      dbname: postgres
-      schema: public
+      type: spark
+      method: thrift
+      schema: default
+      host: spark
+
+      port: 10000
+      user: hive
+
+      connect_retries: 5
+      connect_timeout: 5
+      retry_all: true
   target: dev

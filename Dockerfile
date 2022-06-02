@@ -5,4 +5,7 @@ USER user
 ENV PATH=/home/user/.local/bin:$PATH
 WORKDIR /home/user
 RUN python -m pip install --upgrade pip wheel setuptools
-RUN python -m pip install dbt-postgres
+USER root
+RUN apt-get update -y && apt-get install -y python3-dev libsasl2-dev gcc libsasl2-modules
+USER user
+RUN python -m pip install dbt-spark[PyHive]

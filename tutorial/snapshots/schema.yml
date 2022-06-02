@@ -1,0 +1,6 @@
+version: 2
+
+snapshots:
+  - name: another
+    config:
+      location_root: 's3a://warehouse/snapshots/'

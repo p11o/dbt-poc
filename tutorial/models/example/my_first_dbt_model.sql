@@ -7,13 +7,15 @@
     Try changing "table" to "view" below
 */
 
-{{ config(materialized='table') }}
+{{ config(materialized='table', location_root='s3a://warehouse/first_model/', file_format='delta') }}
 
 with source_data as (
 
-    select 1 as id
+    select 1 id, 7 value
     union all
-    select null as id
+    select 2 id, 3 value
+    union all
+    select 3 id, 4 value
 
 )
 
